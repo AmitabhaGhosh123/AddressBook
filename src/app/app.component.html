@@ -1,0 +1,38 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img width="40" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+  <span>Welcome to Address Book</span>
+</div>
+
+<div class="d-flex flex-nowrap justify-content-end myw-navbar-actions">
+  <div class="homeicon dropdown dropright dropflat d-flex" id="home">
+    <a [routerLink]="['home']" class="myw-navbar-action phx-modal-cursor">
+      <i class="fa fa-home fa-2x"></i>
+      <span>Home</span>
+    </a>
+  </div>
+  <div class="dropdown dropright dropflat d-flex">
+    <a [routerLink]="['viewcontacts']" class="myw-navbar-action phx-modal-cursor" (click)="open1()" id="detailListView"
+      title="List">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA39pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyM2Q5ZmNmZi1jNTAxLWI0NDMtOTNkOC1iOWNiNzNkYzEzNjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjdFQ0IzQjk1NUZDMTFFOUI1OENFQjQxNzQ1NDFFNTUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjdFQ0IzQjg1NUZDMTFFOUI1OENFQjQxNzQ1NDFFNTUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBlZmMwZDljLTM3YzEtN2U0ZS04ZmZjLTZjOTIxMWQ3MTgxMiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjMyNWYxMzVkLTVhMjctMTA0NS04ZTkzLWYzYzEwZjk2ZDdmNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ppt+YgsAAAB5SURBVHjaYpR1rrvGwMCgyUAYbAdiLyT+NiD2JELfdSYiLQABLQJ8XECTiYEOYNSSUUuGuCUs0JxMTMbahYXvRoS+ayxoRQUpIG1kxsk2EuIEOYhmkRInnkQ6yA0LX54IffKjmXHUklFLiLPkOpFqrxHg42x3AQQYADQuEdj2IA92AAAAAElFTkSuQmCC"
+        alt="Grid">
+      <span>List</span>
+    </a>
+  </div>
+
+  <div class="dropdown dropright dropflat d-flex">
+    <a [routerLink]="['viewcontacts']" class="myw-navbar-action phx-modal-cursor" (click)="open()" id="detailTileView"
+      title="Tile">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA39pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplNWZjNTAxMi1jOTlkLTZmNDEtOGQ2MC04NTg5YzBlMTA0NDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUVDNTY0RjQ1NUZDMTFFOTlDMTRBQ0Y5RDc1NTIxODkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUVDNTY0RjM1NUZDMTFFOTlDMTRBQ0Y5RDc1NTIxODkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjc2M2QxZGVmLWYxMjgtZGQ0MS04MWFjLThlOGI4NWI0YjY4NSIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjZlZTA0MDk0LTMyYWYtZGI0OC04OTAwLWYxNDZiNTFjZGJjMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhmGotUAAAFDSURBVHjaYpR1rmMAAgcgbgViCyBmYqAO+AfEJ4C4GogPsEAt2Q3ELAzUBSAHW0HNdgUZ3oZkyU4gfkEliySA2B1qdiuIMEeyxIPKvtoBtcycCSlOXjBQH8DMZGZioBOgm0UsaJHnQGXzJbBZ5A7FwyfojgLxHDR5DSAuh7LnAvERNPkAIPaHskuB+A2afAoQW6NbdAeIF6ApdECy6AgWeQUki9YA8QMs+q3pGnTDOx8ZAHEDljhAjngFLHEAAwVA/AFN3gDGYATWR/+HbRytBWJFNByJJF+KRX4ikrwtFvm12OLoC5Z8gBwnb7DII8fJEyzyX4Zv8maCtlZQinQaVBN/QXF0EogtoVXEDrQqXQKtgHTAlU+AoAc5TpAaJyBwEpSPaNXcgoE/oOYWKOgOgBhAfAzkRSpa8BdqJsjsAwABBgDz2T3tipcfdAAAAABJRU5ErkJggg=="
+        alt="List">
+      <span>Tile</span>
+    </a>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,108 @@
+<form [formGroup]="contactForm" class="phx-formfix">
+  <div class="phx-si-deliverpane-body">
+    <div class="row">
+      <div class="form-group mb-5 col-12 col-md-12">
+        <label class="required" for="">First Name</label>
+        <div>
+          <input type="text" formControlName="firstName" id="firstName"
+            class="form-control phx-add-formcontrol phx-firstname" placeholder="" required>
+        </div>
+        <span *ngIf="!contactForm.value?.firstName" class="phx-error">First Name is required</span>
+        <span
+          *ngIf="contactForm.controls['firstName'].touched && contactForm.controls['firstName'].hasError('maxlength') && contactForm.controls['firstName'].invalid"
+          class="phx-error">Please enter name within 25 characters</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-5 col-12">
+        <label class="required" for="">Last Name</label>
+        <div>
+          <input type="text" formControlName="lastName" id="lastName"
+            class="form-control phx-add-formcontrol phx-lastname" placeholder="" required>
+        </div>
+        <span *ngIf="!contactForm.value?.lastName" class="phx-error">Last Name is required</span>
+        <span
+          *ngIf="contactForm.controls['lastName'].touched && contactForm.controls['lastName'].hasError('maxlength') && contactForm.controls['lastName'].invalid"
+          class="phx-error">Please enter name within 25 characters</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-5 col-4 col-md-4 col-lg-3">
+        <label for="">Contact Number Type</label>
+        <div class="phx-dropdown dropdown" id="contacttype">
+          <div class="form-control phx-add-formcontrol phx-dropdown-toggle dropdown-toggle phx-border" id="Methodology"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+            {{selectedContact?selectedContact:'Select'}}
+          </div>
+          <div class="phx-dropdown-menu dropdown-menu" aria-labelledby="Methodology">
+            <div class="phx-drop-item" *ngFor="let optionvalue of contactType$" (click)="selectItem(optionvalue)">
+              <a href="javascript:;" class="phx-drop-item-header" *ngIf="optionvalue.Text!='null'">{{optionvalue.Text}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-5 col-12">
+        <label for="countrycode">
+          <span>Country Code</span>
+          <input type="text" formControlName="countryCode" id="countryCode"
+            class="form-control phx-add-formcontrol phx-countrycode" tabindex="0" placeholder="">
+          <span
+            *ngIf="contactForm.controls['countryCode'].touched && contactForm.controls['countryCode'].hasError('maxlength') && contactForm.controls['countryCode'].invalid"
+            class="phx-error">Please enter 3 digits code
+          </span>
+          <input type="button" value="Add Numbers" class="number mt-1" tabindex="1" (click)="addMultiplePhoneNumbers()">
+          <span *ngFor="let number of mobileNumberStore" class="px-2 showAddedNumbers">{{number}}</span>
+        </label>
+        <label for="contact">
+          <span>Contact Number</span>
+          <input type="text" formControlName="contactNumber" id="contactNumber"
+            class="form-control phx-add-formcontrol phx-contactnumber" tabindex="0" placeholder="">
+          <span
+            *ngIf="contactForm.controls['contactNumber'].touched && contactForm.controls['contactNumber'].hasError('maxlength') && contactForm.controls['contactNumber'].invalid"
+            class="phx-error">Please enter 10 digits phone no.
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-5 col-12">
+        <label for="">Date of Birth</label>
+        <div>
+          <input type="text" formControlName="dateofBirth" id="dateofBirth"
+            class="form-control phx-add-formcontrol phx-dateofbirth" placeholder="" (input)="dateOfBirthValidate()">
+        </div>
+        <span id="dateOfBirthErr" class="phx-error"></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-5 col-12">
+        <label for="">EmailId</label>
+        <div>
+          <input type="text" formControlName="emailId" id="emailId" class="form-control phx-add-formcontrol phx-emailid"
+            placeholder="">
+          <input type="button" value="Add Email" class="mt-1 email" (click)="addMultipleEmailId()">
+          <span *ngFor="let email of emailIdStore" class="px-2 showAddedEmails">{{email}}</span>
+        </div>
+        <span
+          *ngIf="contactForm.controls['emailId'].touched && contactForm.controls['emailId'].hasError('maxlength') && contactForm.controls['emailId'].invalid"
+          class="phx-error">Please enter valid email id
+        </span>
+      </div>
+    </div>
+
+    <div class="row px-3">
+      <input type="button" class="btn btn-primary" [disabled]="contactForm.invalid" (click)="saveContact()"
+        value="Add Contact">
+      <input type="button" class="btn btn-secondary ml-4" (click)="resetForm()" value="Cancel">
+    </div>
+
+  </div>
+</form>
