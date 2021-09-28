@@ -1,0 +1,105 @@
+<div class="d-flex flex-nowrap justify-content-end searchbox">
+    <input type="search" placeholder="Search..." (input)="search($event.target.value)">
+</div>
+
+<div class="phx-row-count dropdown">
+    <div class="form-control dropdown-toggle phx-rowcount-drpdwn" id="sortFields" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>{{selectedFieldToSort?selectedFieldToSort:'Select'}}</span>
+    </div>
+    <div class="dropdown-menu phx-rowcount-menu mt-0" aria-labelledby="sortFields">
+        <div class="phx-drop-item" *ngFor="let optionvalue of sortFields">
+            <a href="javascript:;" class="phx-drop-item-header" (click)="selectFieldToSort(optionvalue)">
+                <span>{{optionvalue.Text}}</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="contactService.value">
+    <div class="row myw-grid">
+        <div class="col-4" *ngFor="let contact of fetchContact; let i = index">
+            <div class="card myw-card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-10">
+                            <h6 class="mb-0 fs-16 phx-font-size">
+                                <span>{{contact.FirstName}}</span>
+                                <span class="pl-2">{{contact.LastName}}</span>
+                            </h6>
+                        </div>
+                        <span class="pl-4"><i class="fa fa-trash-o" (click)="deleteContact(i)"></i></span>
+                    </div>
+                </div>
+                <div class="card-body phx-no-scroll">
+                    <div class="row">
+                        <div class="col-10">
+                            <h6 class="phx-font-size">
+                                Contact Type: <span>{{contact.ContactType}}</span>
+                            </h6>
+                            <h6 class="phx-font-size">
+                                Mobile Number: <span>{{contact.MobileNumber}}</span>
+                            </h6>
+                            <h6 class="phx-font-size">
+                                <span class="email">{{contact.EmailId}}</span>
+                            </h6>
+                            <!-- <a (click)="showNumbers()" class="link" href="javascript:void(0);"
+                                    *ngIf="count1 > 0">({{count1}}more)
+                            </a> -->
+                            <!-- <div *ngIf="count1 == 1">
+                                <h6 class="phx-font-size">
+                                    <span class="number pr-1" style="display: none;">{{arr1[0]}}</span>
+                                    <a (click)="hideNumbers()" class="link1 pt-1 px-1" style="display: none;"
+                                        href="javascript:void(0);">Read Less</a>
+                                </h6>
+                            </div>
+                            <div *ngIf="count1 > 1">
+                                <h6 class="phx-font-size" *ngFor="let number of arr1">
+                                    <span class="number" style="display: none;">{{number}}</span>
+                                </h6>
+                                <a (click)="hideNumbers()" class="link1" style="display: none;"
+                                    href="javascript:void(0);">Read Less</a>
+                            </div>
+                            <h6 class="phx-font-size mt-4" style="width: fit-content">
+                                <span>{{emailUnique}}</span>
+                                <a (click)="showEmail()" class="link" href="javascript:void(0);"
+                                    *ngIf="count > 0">({{count}}more)</a>
+                            </h6>
+                            <div class="display_email" *ngIf="count == 1">
+                                <h6 class="phx-font-size">
+                                    <span class="email pr-1" style="display: none;">{{arr[0]}}</span>
+                                    <a (click)="hideEmail()" class="link1 pt-1 px-1" style="display: none;"
+                                        href="javascript:void(0);">Read Less</a>
+                                </h6>
+                            </div>
+                            <div *ngIf="count > 1">
+                                <h6 class="phx-font-size" *ngFor="let email of arr">
+                                    <span class="email" style="display: none;">{{email}}</span>
+                                </h6>
+                                <a (click)="hideEmail()" class="link1" style="display: none;"
+                                    href="javascript:void(0);">Read Less</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="contactService.value1">
+    <table>
+        <tr *ngFor="let contact of fetchContact">
+            <span id="name" class="px-2">
+                <app-inline-edit [(ngModel)]="contact.FirstName" type="text"></app-inline-edit>
+            </span>
+            <app-inline-edit [(ngModel)]="contact.LastName" type="text"></app-inline-edit>
+            <span id="number" class="pl-2">
+                <app-inline-edit [(ngModel)]="contact.MobileNumber" type="text"></app-inline-edit>
+            </span>
+            <span id="email" class="pl-2">
+                <app-inline-edit [(ngModel)]="contact.EmailId" type="text"></app-inline-edit>
+            </span>
+        </tr>
+    </table>
+</div>
